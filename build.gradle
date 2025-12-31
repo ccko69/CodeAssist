@@ -30,6 +30,20 @@ allprojects {
     }
 }
 
+subprojects {
+    configurations.all {
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.core.expressions'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.core.runtime'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.core.commands'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.core.contenttype'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.equinox.app'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.equinox.registry'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.equinox.preferences'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.core.jobs'
+        exclude group: 'org.eclipse.platform', module: 'org.eclipse.equinox.common'
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
