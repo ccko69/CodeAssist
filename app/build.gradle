@@ -194,3 +194,7 @@ dependencies {
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 }
+configurations.all {
+    exclude group: 'com.google.guava', module: 'listenablefuture'
+    // Add other common offenders here if the logs show them
+}
