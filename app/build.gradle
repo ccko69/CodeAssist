@@ -194,3 +194,10 @@ dependencies {
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 }
+
+configurations.all {
+    exclude group: 'com.android.databinding', module: 'compiler'
+    exclude group: 'com.google.guava', module: 'listenablefuture'
+    // Specifically target the duplicate tool if the above isn't enough
+    exclude group: 'androidx.databinding', module: 'databinding-compiler'
+}
